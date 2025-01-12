@@ -10,12 +10,12 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('index')->with('products' , Product::all());
+        return view('products.index')->with('products' , Product::all());
     }
 
     public function create()
     {
-        return view('create');
+        return view('products.create');
     }
 
     public function store(ProductRequest $request): RedirectResponse
@@ -27,7 +27,7 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('edit')->with('product', $product);
+        return view('products.edit')->with('product', $product);
     }
 
     public function update(ProductRequest $request, Product $product) : RedirectResponse
@@ -39,7 +39,7 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        return view('show')->with('product', $product);
+        return view('products.show')->with('product', $product);
     } 
 
     public function destroy(Product $product): RedirectResponse
