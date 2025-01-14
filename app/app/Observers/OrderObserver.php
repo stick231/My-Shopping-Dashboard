@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Jobs\ProcessOrderJob;
 use App\Models\Order;
 
 class OrderObserver
@@ -11,7 +12,7 @@ class OrderObserver
      */
     public function created(Order $order): void
     {
-        //
+        ProcessOrderJob::dispatch($order);
     }
 
     /**

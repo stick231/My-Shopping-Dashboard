@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderPlaced;
 use App\Http\Requests\OrderRequest;
 use App\Models\Order;
 use App\Models\OrderItem;
@@ -12,7 +13,7 @@ class OrderController extends Controller
     public function index() 
     {
         $orders = Order::with('orderItems.product')->get();
-        return view('orders.index', compact('orders'));// сделать страничку " / " как вход в сайт, с двумя кнопками, orders and products 
+        return view('orders.index', compact('orders'));
     }
 
     public function store(OrderRequest $request)
@@ -23,6 +24,8 @@ class OrderController extends Controller
         
         $order = Order::create(['total_price' => $product->price]);
 
+        event(new OrderPlaced($order));
+        
         OrderItem::create([
             'order_id' => $order->id,
             'product_id' => $product->id,
