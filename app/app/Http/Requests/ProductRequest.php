@@ -28,5 +28,11 @@ class ProductRequest extends FormRequest
         ];
     }
 
-    //отлов ошибок
+    public function messages()
+    {
+        return [
+            'name.required' => 'Поля name обязательно для заполнения.',
+            'price.required' => 'Поля price обязательно для заполнения.',
+        ];
+    }
 }

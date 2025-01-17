@@ -27,6 +27,6 @@ class ProcessOrderJob implements ShouldQueue
     {
         $this->order->status = 'In Progress';
         $this->order->save();
-        Log::info("Заказ №{$this->order->id} успешно изменила статус на {$this->order->status}");
+        Log::info("Заказ №{$this->order->id} успешно изменил статус на {$this->order->status}");
     }
 }

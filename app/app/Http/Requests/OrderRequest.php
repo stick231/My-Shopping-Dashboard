@@ -27,5 +27,10 @@ class OrderRequest extends FormRequest
         ];
     }
 
-    //отлов ошибок
+    public function messages()
+    {
+        return 
+            ['product_id' => 'Поля product_id обязательно для заполнения.'];
+    }
+    // проверка
 }
