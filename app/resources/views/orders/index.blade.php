@@ -12,7 +12,7 @@
     <div>
         <h3>Order #{{ $order->id }}</h3>
         <p>Status: {{ $order->status }}</p>
-        <p>Total Price: {{ $order->total_price }}</p>
+        <p>Total Price: {{ $order->total_price }}$</p>
         <p>Created at: {{ $order->created_at }}</p>
         <table>
             <thead>
@@ -29,7 +29,7 @@
                     <tr>
                         <td>{{ $item->product->name }}</td>
                         <td>{{ $item->quantity }}</td>
-                        <td>{{ $item->price }}</td>
+                        <td>{{ $item->price }}$</td>
                         <td>{{ $order->status }}</td>
                         <td>
                             <form action="{{ route('orders.destroy', $order->id) }}" method="POST">

@@ -21,7 +21,7 @@
             @forelse ($products as $product)
             <tr>
                 <th>{{ $product->name }}</th>
-                <th>{{ $product->price }}</th>
+                <th>{{ $product->price }}$</th>
                 <th>{{ $product->description }}</th>
                 <th>
                     <form action="{{ route('orders.store') }}" method="POST">
@@ -48,7 +48,5 @@
         @endforelse
         </tbody>
     </table>
-    <a class="create btn" href="{{ route('products.create') }}">Create product</a>
-    <a class="myOrders btn" href="{{ route('orders.index') }}">My Orders</a>
 </div>
 @endsection

@@ -16,7 +16,7 @@
             <tbody>
                 <tr>
                     <th>{{ $product->name }}</th>
-                    <th>{{ $product->price }}</th>
+                    <th>{{ $product->price }} $</th>
                     <th>{{ $product->description }}</th>
                 </tr>
             </tbody>

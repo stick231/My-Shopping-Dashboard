@@ -14,9 +14,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="{{ route('products.index') }}">Продукты</a></li>
-                <li><a href="{{ route('orders.index') }}">Заказы</a></li>
-                <li><a href="{{ route('products.create') }}">Создать продукт</a></li>
+                <li><a href="{{ route('products.index') }}">Product</a></li>
+                <li><a href="{{ route('orders.index') }}">Orders</a></li>
+                <li><a href="{{ route('products.create') }}">Create Product</a></li>
             </ul>
         </nav>
     </header>

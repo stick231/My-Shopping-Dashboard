@@ -144,7 +144,7 @@ option {
 
 footer{
     text-align: center;
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 @media only screen and (max-width: 600px) {
