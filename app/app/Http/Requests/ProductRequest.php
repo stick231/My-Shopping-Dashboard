@@ -27,4 +27,12 @@ class ProductRequest extends FormRequest
             'description' => 'nullable|string',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Поля name обязательно для заполнения.',
+            'price.required' => 'Поля price обязательно для заполнения.',
+        ];
+    }
 }

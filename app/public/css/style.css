@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #fff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+}
+
+header {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    padding: 10px 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 4.5vw;
+}
+
+nav ul li:last-child {
+    margin-right: 0; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+div {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+a {
+    display: inline-block;
+    margin: 10px 0;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+form label {
+    display: block;
+    margin: 10px 0;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+}
+
+.btn, form input[type="submit"],
+button {
+    margin-top: 5px;
+    padding: 10px 20px; 
+    background-color: #007bff;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:focus {
+    border-color: #007BFF; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+footer{
+    text-align: center;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 600px) {
+    table{
+        border-radius: 15px;
+    }
+    th, td {
+        padding: 2.5px;
+    }
+    div{
+        padding: 1px;
+    }
+}
+
+.error-validation{
+    color: red;
+    margin: 20px;
+}
