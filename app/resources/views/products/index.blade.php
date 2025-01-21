@@ -8,6 +8,13 @@
 
 @section('content')
 <div>
+    @section('message')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @show
     <table>
         <thead>
             <tr>

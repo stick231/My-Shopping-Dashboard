@@ -7,7 +7,13 @@
 @endsection
 
 @section('content')
-
+@section('message')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+@show
 @forelse ($orders as $order)
     <div>
         <h3>Order #{{ $order->id }}</h3>

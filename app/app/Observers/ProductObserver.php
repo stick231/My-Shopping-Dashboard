@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Models\Order;
 use App\Models\Product;
+use Illuminate\Support\Facades\Log;
 
 class ProductObserver
 {
@@ -12,7 +13,7 @@ class ProductObserver
      */
     public function created(Product $product): void
     {
-        //
+        Log::info("Продукт ID# {$product->id} Name# {$product->name} создан в {$product->created_at}");
     }
 
     /**
@@ -20,7 +21,7 @@ class ProductObserver
      */
     public function updated(Product $product): void
     {
-        //
+        Log::info("Продукт ID# {$product->id} Name# {$product->name} обновлен в {$product->updated_at}");
     }
 
     public function deleting(Product $product)
@@ -37,7 +38,7 @@ class ProductObserver
      */
     public function deleted(Product $product): void
     {
-        //
+        Log::info("Продукт ID# {$product->id} Name# {$product->name} удален в " . now());
     }
 
     /**
