@@ -4,7 +4,6 @@
 
 @section('content')
     <div>
-        <a href="{{ route('products.index') }}">Back</a>
         <table>
             <thead>
                 <tr>

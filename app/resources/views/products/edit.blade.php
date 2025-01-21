@@ -4,7 +4,6 @@
 
 @section('content')
 <div>
-    <a href="{{ route('products.index') }}">Back</a>
     <form action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')

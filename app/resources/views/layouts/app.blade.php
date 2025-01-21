@@ -27,6 +27,7 @@
 
     <footer>
         <p>{{ date('Y') }} Laravel App</p>
+        <a href="https://github.com/stick231/laravel-11-crud-project">My project</a>
     </footer>
 </body>
 </html>

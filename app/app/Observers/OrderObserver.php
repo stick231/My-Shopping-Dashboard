@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Jobs\ProcessOrderJob;
 use App\Models\Order;
+use Illuminate\Support\Facades\Log;
 
 class OrderObserver
 {
@@ -12,7 +13,7 @@ class OrderObserver
      */
     public function created(Order $order): void
     {
-        ProcessOrderJob::dispatch($order);
+        Log::info("Заказ ID# {$order->id} создан в {$order->created_at}");
     }
 
     /**
@@ -20,7 +21,7 @@ class OrderObserver
      */
     public function updated(Order $order): void
     {
-        //
+        Log::info("Заказ ID# {$order->id} обновлен в {$order->updated_at}");
     }
 
     /**
@@ -28,7 +29,7 @@ class OrderObserver
      */
     public function deleted(Order $order): void
     {
-        //
+        Log::info("Заказ ID# {$order->id} удален в " . now());
     }
 
     /**

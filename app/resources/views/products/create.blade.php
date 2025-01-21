@@ -4,7 +4,6 @@
 
 @section('content')
 <div>
-    <a href="{{ route('products.index') }}">Back</a>
     <form action="{{ route('products.store') }}" method="POST">
         @csrf
         <label for="">Product name<input type="text" name="name"></label>

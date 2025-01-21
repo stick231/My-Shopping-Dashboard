@@ -7,13 +7,23 @@
 @endsection
 
 @section('content')
-
+@section('message')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+@show
 @forelse ($orders as $order)
     <div>
         <h3>Order #{{ $order->id }}</h3>
         <p>Status: {{ $order->status }}</p>
         <p>Total Price: {{ $order->total_price }}$</p>
-        <p>Created at: {{ $order->created_at }}</p>
+        @if ($order->created_at->diffInSeconds($order->updated_at) <= 1)
+            <p>Created at: {{ $order->created_at }}</p>
+        @else
+            <p>Updated at: {{ $order->updated_at }}</p>
+        @endif
         <table>
             <thead>
                 <tr>
