@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\OrderPlaced;
+use App\Events\OrderUpdated;
 use App\Http\Requests\OrderRequest;
 use App\Models\Order;
 use App\Models\OrderItem;
@@ -63,6 +64,8 @@ class OrderController extends Controller
                 'price' => $product->price,
             ]);
         }
+
+        event(new OrderUpdated($order));
         
     
         return redirect()->route('orders.index')->with('success', 'Order updated successfully!');

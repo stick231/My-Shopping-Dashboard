@@ -3,7 +3,6 @@
 @section('title', 'Edit Order')
 @section('content')
 <div>
-    <a href="{{ route('orders.index') }}">Back</a>
     <form action="{{ route('orders.update', $order->id) }}" method="POST">
         @csrf
         @method('PUT')

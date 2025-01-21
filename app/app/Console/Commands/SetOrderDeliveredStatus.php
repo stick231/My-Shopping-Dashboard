@@ -6,6 +6,7 @@ use App\Models\Order;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
+use League\CommonMark\Extension\SmartPunct\EllipsesParser;
 
 class SetOrderDeliveredStatus extends Command
 {
@@ -29,8 +30,11 @@ class SetOrderDeliveredStatus extends Command
     public function handle()
     {
         $oneDayAgo = Carbon::now()->subDay();
+        
+        $orderToDeliver = Order::where('created_at', '<', $oneDayAgo)
+            ->where('updated_at', '<', $oneDayAgo)
+            ->get();
 
-        $orderToDeliver = Order::where('created_at', '<', $oneDayAgo)->get();
 
         if($orderToDeliver->isEmpty()){
             $this->info('Заказы еще не доставлены');
