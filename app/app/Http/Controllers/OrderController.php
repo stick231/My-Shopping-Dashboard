@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Events\OrderPlaced;
-use App\Events\OrderUpdated;
 use App\Http\Requests\OrderRequest;
 use App\Jobs\ProcessOrderJob;
 use App\Models\Order;
@@ -25,8 +24,9 @@ class OrderController extends Controller
         $product = Product::findOrFail($validated['product_id']);
         
         $order = Order::create(['total_price' => $product->price]);
-        
-        $order->items()->create([
+
+        OrderItem::create([
+            'order_id' => $order->id,
             'product_id' => $product->id,
             'quantity' => $validated['quantity'] ?? 1,
             'price' => $product->price,
@@ -56,7 +56,6 @@ class OrderController extends Controller
         $product = Product::findOrFail($validated['product_id']);
     
         $order->update(['total_price' => $product->price * ($validated['quantity'] ?? 1)]);
-    
         $order->orderItems()->updateOrCreate(
             ['order_id' => $order->id],
             [
@@ -70,7 +69,6 @@ class OrderController extends Controller
     
         return redirect()->route('orders.index')->with('success', 'Order updated successfully!');
     }
-    
 
     public function destroy(Order $order)
     {

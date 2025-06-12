@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [
         ngrok('2rFPhLlerN56riEZLjhL6IaBiJY_7Bz4GSEs2kYDvUFtJiPT9'), // Вставьте ваш токен ngrok
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: [],
             refresh: true,
         }),
     ],
